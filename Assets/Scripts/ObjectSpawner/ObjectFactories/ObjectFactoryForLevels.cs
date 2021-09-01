@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ObjectSpawner.ObjectFactories
+namespace Scripts.ObjectSpawner.ObjectFactories
 {
-    public abstract class ObjectFactoryForLevels
+    public abstract class ObjectFactoryForLevels : MonoBehaviour
     {
 
     }

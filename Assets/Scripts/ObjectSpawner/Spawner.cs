@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ObjectSpawner
+namespace Scripts.ObjectSpawner
 {
     public abstract class Spawner
     {
