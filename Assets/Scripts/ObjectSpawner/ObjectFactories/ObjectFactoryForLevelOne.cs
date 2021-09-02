@@ -1,28 +1,49 @@
 ﻿using Scripts.GameObjects;
 using Scripts.GameObjects.AdditionalEffects;
 using Scripts.GameObjects.Obstacles;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.ObjectSpawner.ObjectFactories
 {
+    //TODO: После разработки фабрики и баззы данных, посмотреть соблюдается ли принцип инверсии зависимостей.
     public class ObjectFactoryForLevelOne : ObjectFactoryForLevels
     {
-        [SerializeField] private Coin _coin;
-        [SerializeField] private Krystal _krystal;
-        [SerializeField] private Obstacle _obstacle_1;
-        [SerializeField] private Obstacle _obstacle_2;
-        [SerializeField] private Obstacle _obstacle_3;
-        [SerializeField] private Obstacle _obstacle_4;
-        [SerializeField] private Obstacle _obstacle_5;
-        [SerializeField] private Obstacle _obstacle_6;
-        [SerializeField] private Obstacle _obstacle_7;
-        [SerializeField] private Obstacle _obstacle_8;
-        [SerializeField] private Effect _immunity;
-        [SerializeField] private Effect _magnite;
-        [SerializeField] private Effect _endllesTeleport;
+        //Придумать типы названий для препятсвий каждого уровня.
 
-        
+        [SerializeField] private Coin _coinPrefab;
+        [SerializeField] private Krystal _krystalPrefab;
+        [SerializeField] private Obstacle _obstacle_1_prefab;   //
+        [SerializeField] private Obstacle _obstacle_2_prefab;   //
+        [SerializeField] private Obstacle _obstacle_3_prefab;   //
+        [SerializeField] private Obstacle _obstacle_4_prefab;   //
+        [SerializeField] private Obstacle _obstacle_5_prefab;   //
+        [SerializeField] private Obstacle _obstacle_6_prefab;   //
+        [SerializeField] private Obstacle _obstacle_7_prefab;   //
+        [SerializeField] private Obstacle _obstacle_8_prefab;   //
+        [SerializeField] private Effect _immunityPrefab;
+        [SerializeField] private Effect _magnitePrefab;
+        [SerializeField] private Effect _endllesTeleportPrefab;
+
+        public override Coin GetCoin()
+        {
+            throw new System.NotImplementedException();
+        }  
+
+        public override Krystal GetKrystal()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override Obstacle GetObstacle(ObstaclesType obstaclesType)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override Effect GetEffect(AdditionalEffectType additionalEffectType)
+        {
+            throw new System.NotImplementedException();
+        }
+
+
     }
 }

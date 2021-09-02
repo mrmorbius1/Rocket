@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\AdditionalEffectType.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\Effect.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\OneTime\OneTimeEffect.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\Temporary\EndllesTeleport.cs" />
@@ -72,7 +73,9 @@
     <Compile Include="Assets\Scripts\GameObjects\Coin.cs" />
     <Compile Include="Assets\Scripts\GameObjects\Krystal.cs" />
     <Compile Include="Assets\Scripts\GameObjects\Obstacles\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\GameObjects\Obstacles\ObstaclesType.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\Algorithms\ISpawnAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\ObjectSpawner\ObjectFactories\DatabaseOfCreatedObjects.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\ObjectFactories\ObjectFactoryForLevelOne.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\ObjectFactories\ObjectFactoryForLevels.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\Spawner.cs" />
