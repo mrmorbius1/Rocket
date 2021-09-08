@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace Scripts.GameObjects.Obstacles
 {
     //Придумать типы названий для препятсвий каждого уровня.
-    public enum ObstaclesType  //Refactoring name!!!
+    public enum ObstaclesType  
     {
-        Obstacle_1,
-        Obstacle_2,
-        Obstacle_3,
-        Obstacle_4,
-        Obstacle_5,
-        Obstacle_6,
-        Obstacle_7,
-        Obstacle_8,
+        ObstacleOne,
+        ObstacleTwo,
+        ObstacleThree,
+        ObstacleFour,
+        ObstacleFive,
+        ObstacleSix,
+        ObstacleSeven,
+        ObstacleEight,
     }
 }

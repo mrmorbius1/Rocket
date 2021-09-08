@@ -1,7 +1,6 @@
 ﻿using Scripts.GameObjects;
 using Scripts.GameObjects.AdditionalEffects;
 using Scripts.GameObjects.Obstacles;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,47 +10,83 @@ namespace Scripts.ObjectSpawner.ObjectFactories
     //TODO: Событие которое подпишется на метод создания объекта в фабрике (паттерн наблюдатель).
     class DatabaseOfCreatedObjects : MonoBehaviour
     {
-        //[SerializeField] private GameObject _activeGameObject;  //new name _parentForActiveObjects
-        //[SerializeField] private GameObject _notActiveGameObject;  //new name _parentForNotActiveObjects
-
-        private List<Coin> _activeСoins;
-        private List<Krystal> _activeKrystals;
-        private List<Obstacle> _activeObstacles;
-        private List<Effect> _activeEffects;
-
-        private List<Coin> _notActiveСoins;
+        private List<Coin> _notActiveCoins;
         private List<Krystal> _notActiveKrystals;
         private List<Obstacle> _notActiveObstacles;
         private List<Effect> _notActiveEffects;
 
+        private const int DEFAULT_ELEMENT_INDEX = 0;    
 
-        private GameObject[] _activeGameObjects;
-        private GameObject[] _notActiveGameObjects;
 
-        public bool GetNotActiveObject<T>(/*out T gameObject*/) //Подумать над правильностью именования метода.
+        public Coin GetNotActiveCoin_CanReturnNull()
         {
-            return false;
-        }
-
-        private T SearchNotActiveObject<T>(T gameObject) where T : class
-        {
-            foreach (var notActiveGameObject in _notActiveGameObjects)
+            if(_notActiveCoins.Count > 0)
             {
-                //if (notActiveGameObject is T)
-                //{
-                //    T t = (T)notActiveGameObject;
-                //    return t;
-                //}
-                if (notActiveGameObject is T t)
+                return _notActiveCoins[DEFAULT_ELEMENT_INDEX];
+            }
+
+            return null;
+        }
+        public Krystal GetNotActiveKrystal_CanReturnNull()
+        {
+            if(_notActiveKrystals.Count > 0)
+            {
+                return _notActiveKrystals[DEFAULT_ELEMENT_INDEX];
+            }
+
+            return null;
+        }
+        public Obstacle GetNotActiveObstacle_CanReturnNull(ObstaclesType obstaclesType)
+        {
+            if(_notActiveObstacles.Count > 0)
+            {
+                foreach (var item in _notActiveObstacles)
                 {
-                    return t;
-                }
-                else
-                {
-                    return null;
+                    if(item.obstaclesType == obstaclesType)
+                    {
+                        return item;
+                    }
                 }
             }
+
             return null;
+        }
+        public Effect GetNotActiveEffect_CanReturnNull(EffectType effectType)
+        {
+            if (_notActiveEffects.Count > 0)
+            {
+                foreach (var item in _notActiveEffects)
+                {
+                    if(item.effectType == effectType)
+                    {
+                        return item;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public void AddNewGameObject<T>(T gameObject) where T: MonoBehaviour
+        {
+            switch (gameObject)
+            {
+                case Coin coin:
+                    _notActiveCoins.Add(coin);
+                    break;
+
+                case Krystal krystal:
+                    _notActiveKrystals.Add(krystal);
+                    break;
+
+                case Obstacle obstacle:
+                    _notActiveObstacles.Add(obstacle);
+                    break;
+
+                case Effect effect:
+                    _notActiveEffects.Add(effect);
+                    break;
+            }
         }
     }
 }

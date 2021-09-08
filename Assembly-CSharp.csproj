@@ -63,8 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\AdditionalEffectType.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\Effect.cs" />
+    <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\EffectType.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\OneTime\OneTimeEffect.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\Temporary\EndllesTeleport.cs" />
     <Compile Include="Assets\Scripts\GameObjects\AdditionalEffects\Temporary\Immunity.cs" />
