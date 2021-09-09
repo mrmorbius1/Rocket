@@ -38,11 +38,11 @@ namespace Scripts.ObjectSpawner.ObjectFactories
         private Effect _endllesTeleportPrefab;
 
         [SerializeField]
-        private DatabaseOfCreatedObjects _databaseOfCreatedObjects;
+        private DatabaseOfCreatedGameObjects _databaseOfCreatedGameObjects;
 
         public override Coin GetCoin()
         {
-            Coin coin = _databaseOfCreatedObjects.GetNotActiveCoin_CanReturnNull();
+            Coin coin = _databaseOfCreatedGameObjects.GetNotActiveCoin_CanReturnNull();
             
             if(coin == null)
             {
@@ -55,7 +55,7 @@ namespace Scripts.ObjectSpawner.ObjectFactories
 
         public override Krystal GetKrystal()
         {
-            Krystal krystal = _databaseOfCreatedObjects.GetNotActiveKrystal_CanReturnNull();
+            Krystal krystal = _databaseOfCreatedGameObjects.GetNotActiveKrystal_CanReturnNull();    
 
             if (krystal == null)
             {
@@ -68,7 +68,7 @@ namespace Scripts.ObjectSpawner.ObjectFactories
 
         public override Obstacle GetObstacle(ObstaclesType obstaclesType)
         {
-            Obstacle obstacle = _databaseOfCreatedObjects.GetNotActiveObstacle_CanReturnNull(obstaclesType);
+            Obstacle obstacle = _databaseOfCreatedGameObjects.GetNotActiveObstacle_CanReturnNull(obstaclesType);
 
             if(obstacle == null)
             {
@@ -105,7 +105,7 @@ namespace Scripts.ObjectSpawner.ObjectFactories
 
         public override Effect GetEffect(EffectType effectType)
         {
-            Effect effect = _databaseOfCreatedObjects.GetNotActiveEffect_CanReturnNull(effectType);
+            Effect effect = _databaseOfCreatedGameObjects.GetNotActiveEffect_CanReturnNull(effectType);
 
             if(effect == null)
             {
@@ -128,7 +128,7 @@ namespace Scripts.ObjectSpawner.ObjectFactories
         private T InitializeNewGameObject<T>(T prefab) where T : MonoBehaviour
         {
             T instance = CreateNewGameObject(prefab);
-            _databaseOfCreatedObjects.AddNewGameObject(instance);
+            _databaseOfCreatedGameObjects.AddNewGameObject(instance);
             return instance;
         }
 
