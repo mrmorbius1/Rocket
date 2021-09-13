@@ -8,7 +8,7 @@ namespace Scripts.ObjectSpawner.ObjectFactories
 {
     //TODO: Возможно лучше хранить в GameObject.
     //TODO: Событие которое подпишется на метод создания объекта в фабрике (паттерн наблюдатель).
-    class DatabaseOfCreatedGameObjects : MonoBehaviour
+    class DatabaseOfCreatedGameObjects : MonoBehaviour      //Универсальная или на один уровень?
     {
         private List<Coin> _activeCoins;
         private List<Krystal> _activeKrystals;
@@ -22,13 +22,12 @@ namespace Scripts.ObjectSpawner.ObjectFactories
 
         private const int DEFAULT_FIRST_INDEX = 0;    
 
-        public Coin GetNotActiveCoin_CanReturnNull()    //Метод выполняет несколько задач, метод обманывает своим названием.
+        public Coin GetNotActiveCoin_CanReturnNull()   
         {
             if(_notActiveCoins.Count > 0)
             {
                 Coin coin = _notActiveCoins[DEFAULT_FIRST_INDEX];
-                _notActiveCoins.RemoveAt(DEFAULT_FIRST_INDEX);
-                _activeCoins.Add(coin);
+                ActivateGameObject(_notActiveCoins, _activeCoins, coin);
                 return coin;
             }
 
@@ -39,7 +38,9 @@ namespace Scripts.ObjectSpawner.ObjectFactories
         {
             if(_notActiveKrystals.Count > 0)
             {
-                return _notActiveKrystals[DEFAULT_FIRST_INDEX];
+                Krystal krystal = _notActiveKrystals[DEFAULT_FIRST_INDEX];
+                ActivateGameObject(_notActiveKrystals, _activeKrystals, krystal);
+                return krystal;
             }
 
             return null;
@@ -49,11 +50,12 @@ namespace Scripts.ObjectSpawner.ObjectFactories
         {
             if(_notActiveObstacles.Count > 0)
             {
-                foreach (var item in _notActiveObstacles)
+                foreach (var obstacle in _notActiveObstacles)
                 {
-                    if(item.obstaclesType == obstaclesType)
+                    if(obstacle.obstaclesType == obstaclesType)
                     {
-                        return item;
+                        ActivateGameObject(_notActiveObstacles, _activeObstacles, obstacle);
+                        return obstacle;
                     }
                 }
             }
@@ -65,11 +67,12 @@ namespace Scripts.ObjectSpawner.ObjectFactories
         {
             if (_notActiveEffects.Count > 0)
             {
-                foreach (var item in _notActiveEffects)
+                foreach (var effect in _notActiveEffects)
                 {
-                    if(item.effectType == effectType)
+                    if(effect.effectType == effectType)
                     {
-                        return item;
+                        ActivateGameObject(_notActiveEffects, _activeEffects, effect);
+                        return effect;
                     }
                 }
             }
@@ -77,7 +80,7 @@ namespace Scripts.ObjectSpawner.ObjectFactories
             return null;
         }
 
-        public void AddNewGameObject<T>(T gameObject) where T: MonoBehaviour
+        public void AddNewGameObject<T>(T gameObject) where T: MonoBehaviour    //
         {
             switch (gameObject)
             {
@@ -99,34 +102,35 @@ namespace Scripts.ObjectSpawner.ObjectFactories
             }
         }
 
-        private void ActivateGameObject()
+        private void ActivateGameObject<T>(List<T> notActiveGameObjects, List<T> activeGameObjects, T gameObject)   //Названия параметров.
         {
-
+            RemoveNotActiveGameObject(notActiveGameObjects, gameObject);
+            AddActiveGameObject(activeGameObjects, gameObject);
+        }
+        private void DeactivateGameObject<T>(List<T> activeGameObjects, List<T> notActiveGameObjects, T gameObject)    //Названия параметров.
+        {
+            RemoveActiveGameObject(activeGameObjects, gameObject);
+            AddNotActiveGameObject(notActiveGameObjects, gameObject);
         }
 
-        private void DeactivateGameObject()
-        {
 
-        }
-
-        private void AddNotActiveGameObject<T>(List<T> gameObjects, T gameObject)
+        private void AddNotActiveGameObject<T>(List<T> gameObjects, T gameObject)   //Названия параметров.
         {
             gameObjects.Add(gameObject);
         }
-
-        private void RemoveNotActiveGameObject<T>(List<T> gameObjects)
+        private void RemoveNotActiveGameObject<T>(List<T> gameObjects, T gameObject)    //Названия параметров.
         {
-            gameObjects.RemoveAt(DEFAULT_FIRST_INDEX);
+            gameObjects.Remove(gameObject);
         }
 
-        private void AddActiveGameObject<T>(List<T> gameObjects, T gameObject)
+
+        private void AddActiveGameObject<T>(List<T> gameObjects, T gameObject)  //Названия параметров.
         {
             gameObjects.Add(gameObject);
         }
-
-        private void RemoveActiveGameObject<T>(List<T> gameObjects)     //Возможно удаление конкретного объекта будет лучше.
+        private void RemoveActiveGameObject<T>(List<T> gameObjects, T gameObject)   //Названия параметров.  
         {
-            gameObjects.RemoveAt(DEFAULT_FIRST_INDEX);
+            gameObjects.Remove(gameObject);
         }
     }
 }

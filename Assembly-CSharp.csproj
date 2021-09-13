@@ -75,9 +75,11 @@
     <Compile Include="Assets\Scripts\GameObjects\Obstacles\Obstacle.cs" />
     <Compile Include="Assets\Scripts\GameObjects\Obstacles\ObstaclesType.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\Algorithms\ISpawnAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\ObjectSpawner\Algorithms\LevelOne\AlgorithmSpawnObjectsForLevelOne.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\ObjectFactories\DatabaseOfCreatedGameObjects.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\ObjectFactories\ObjectFactoryForLevelOne.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\ObjectFactories\ObjectFactoryForLevels.cs" />
+    <Compile Include="Assets\Scripts\ObjectSpawner\SpawnForLevelOne.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner\Spawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mrmorbius/source/repos/Rocket/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
