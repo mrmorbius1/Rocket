@@ -1,23 +1,12 @@
 ﻿using Scripts.ObjectSpawner.ObjectFactories;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace Scripts.ObjectSpawner.Algorithms.LevelOne
 {
-    public class AlgorithmSpawnObjectsForLevelOne : MonoBehaviour, ISpawnAlgorithm
+    public class AlgorithmSpawnObjectsForLevelOne : SpawnAlgorithm
     {
-        private ObjectFactoryForLevels _objectFactoryForLevels;     //Добавить поле в интерфейс ISpawnAlgorithm ? 
-
-        private void Awake()
-        {
-            Initialize();
-        }
-
-        public void SpawnAlgorithm()
-        {
-            //ФАБРИКА.
-        }    
-
-        private void Initialize()
+        public override void Algorithm()
         {
             
         }

@@ -3,8 +3,19 @@ using UnityEngine;
 
 namespace Scripts.ObjectSpawner
 {
-    public abstract class Spawner : MonoBehaviour
+    public class Spawner : MonoBehaviour
     {
-        public abstract ISpawnAlgorithm SpawnAlgorithm { get; set; }    //Сделать protected, тк это не интерфейс взаимодействия?
+        [SerializeField]
+        private SpawnAlgorithm _spawnAlgorithm;
+
+        private void Start()
+        {
+            StartAlgorithm();
+        }
+
+        private void StartAlgorithm()
+        {
+            _spawnAlgorithm.Algorithm();
+        }
     }
 }

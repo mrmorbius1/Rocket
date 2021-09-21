@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8435623831171224594}
   - component: {fileID: 8435623831171224593}
+  - component: {fileID: 8574231627533044900}
   m_Layer: 0
-  m_Name: Obstacles_1
+  m_Name: ObstacleOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8574231627533044900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435623831171224592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e66d5696fce48e48bb159bdef43b77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesType: 0

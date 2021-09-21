@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &308220761970948529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9197481764649225367}
+  - component: {fileID: 9105891167030395278}
+  m_Layer: 0
+  m_Name: ObjectFactoryForLevelOne
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9197481764649225367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308220761970948529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.48969746, y: 0.92372596, z: -6.1015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9105891167030395278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308220761970948529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bc6c6e48bc0ae4086304c33486e0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinPrefab: {fileID: 3087413322507879208, guid: 9a287a89fdc4e5a45b0d35ba88ac4612,
+    type: 3}
+  _krystalPrefab: {fileID: -4302831623809249744, guid: bf40f5852619edc48b9130de0895e1d6,
+    type: 3}
+  _obstacleOnePrefab: {fileID: 8574231627533044900, guid: 400c3904e745e244e8c5aa8cb78ff9b1,
+    type: 3}
+  _obstacleTwoPrefab: {fileID: -5766241704714218220, guid: 7c2f43007ad53384ca4c100364e613d3,
+    type: 3}
+  _obstacleThreePrefab: {fileID: -3103905411608475092, guid: 3e8c42274df13fb4e851c924b69c8a08,
+    type: 3}
+  _obstacleFourPrefab: {fileID: -3970023061905785740, guid: 788071f7285d26a4da81531cb6127264,
+    type: 3}
+  _obstacleFivePrefab: {fileID: -5082048004598003316, guid: f7511b2c04701ed45af3c34560bcfed0,
+    type: 3}
+  _obstacleSixPrefab: {fileID: -4212708642396037646, guid: 575195116b720f24baaff27c00df7bf9,
+    type: 3}
+  _obstacleSevenPrefab: {fileID: -9208780340608488755, guid: d7afbfcafb5b3c04789fcb08f272aefe,
+    type: 3}
+  _obstacleEightPrefab: {fileID: 8592736034628516865, guid: 7ce5d2f6fbbec924ab42b634c3f0ea81,
+    type: 3}
+  _immunityPrefab: {fileID: -6394069383899951790, guid: a125274dde6f1d248a5b081fa43b9a10,
+    type: 3}
+  _magnitePrefab: {fileID: -959725428813656989, guid: da20f955dedc3cf4a973ea1cdfb797fc,
+    type: 3}
+  _endllesTeleportPrefab: {fileID: -6834544129508375223, guid: d4922e38fe121e647b0c1fbee9eed13b,
+    type: 3}
+  _databaseOfCreatedGameObjects: {fileID: 0}

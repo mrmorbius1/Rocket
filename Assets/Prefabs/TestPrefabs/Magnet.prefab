@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7407841638498594486}
   - component: {fileID: 7407841638498594487}
   - component: {fileID: 7407841638498594484}
+  - component: {fileID: -959725428813656989}
   m_Layer: 0
   m_Name: Magnet
   m_TagString: Untagged
@@ -108,3 +109,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.059563473, y: 0.058710024}
   m_EdgeRadius: 0
+--- !u!114 &-959725428813656989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7407841638498594485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ac5117d0f33874cb10fcfc811cc807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 0
